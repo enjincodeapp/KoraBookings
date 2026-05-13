@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Search Results - Kora Smart</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-container": "#817358",
+                        "on-primary": "#ffffff",
+                        "on-primary-container": "#fffbff",
+                        "surface-container": "#f0eded",
+                        "on-surface": "#1b1c1c",
+                        "inverse-on-surface": "#f3f0ef",
+                        "error": "#ba1a1a",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed-variant": "#51452d",
+                        "primary-fixed": "#ffdbcd",
+                        "tertiary-fixed-dim": "#d6c4a5",
+                        "on-primary-fixed-variant": "#6e381f",
+                        "surface-dim": "#dcd9d9",
+                        "primary-container": "#a46448",
+                        "on-secondary": "#ffffff",
+                        "background": "#fcf9f8",
+                        "inverse-primary": "#ffb596",
+                        "outline-variant": "#d8c2ba",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-container": "#4f6a5b",
+                        "on-secondary-fixed": "#062014",
+                        "on-error": "#ffffff",
+                        "tertiary": "#675a41",
+                        "surface-bright": "#fcf9f8",
+                        "primary-fixed-dim": "#ffb596",
+                        "secondary": "#496455",
+                        "on-tertiary-container": "#fffbff",
+                        "on-background": "#1b1c1c",
+                        "tertiary-fixed": "#f3e0c0",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-fixed": "#231a06",
+                        "primary": "#874d32",
+                        "outline": "#85736c",
+                        "surface": "#fcf9f8",
+                        "on-error-container": "#93000a",
+                        "secondary-container": "#ccead6",
+                        "on-primary-fixed": "#360f00",
+                        "on-secondary-fixed-variant": "#324c3e",
+                        "on-surface-variant": "#53433e",
+                        "inverse-surface": "#303030",
+                        "surface-variant": "#e4e2e1",
+                        "surface-container-highest": "#e4e2e1",
+                        "surface-tint": "#8a4f34",
+                        "surface-container-low": "#f6f3f2",
+                        "secondary-fixed-dim": "#b0cdbb",
+                        "surface-container-high": "#eae7e7",
+                        "secondary-fixed": "#ccead6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "16px",
+                        "container-margin": "24px",
+                        "card-gap": "20px",
+                        "unit": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "body-md": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", { "lineHeight": "1.3", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "label-caps": ["12px", { "lineHeight": "1.2", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "0.02em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "letterSpacing": "0.01em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body class="bg-background text-on-surface font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed">
+    <!-- TopAppBar -->
+    <header
+        class="fixed top-0 left-0 w-full flex justify-between items-center px-container-margin py-unit h-16 bg-surface/80 backdrop-blur-xl z-50 shadow-[0px_40px_40px_rgba(135,77,50,0.04)]">
+        <div class="flex items-center gap-4">
+            <div class="w-10 h-10 rounded-full overflow-hidden border border-outline-variant">
+                <img alt="User Profile" class="w-full h-full object-cover"
+                    data-alt="A professional portrait of a stylish Nigerian digital nomad with a warm smile, set against a blurred background of a high-end Abuja boutique hotel interior. The lighting is soft and golden, highlighting rich textures and a sophisticated atmosphere consistent with a modern minimalist aesthetic."
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdZ8qruf7Rhqv9jGg-JdT2vWbZF3MkM7rM82qCmIOV3zbdGe4cxpBiPz1kgX9txrksLvoD3wHz5gt4TbIqUDUd2yHima234pRZqbK9zFau1qR71DBuW6quYDxPNin3kRHpYGQxESCOaOm3QsJeScgGYwdNvliSu0v9SdKYoUuQ8x0aIs044s4e8v-Cbt0IcexG50Lv1yBliQiQA5WfenO1T3L8toVGvLbT5UTEq7DumuWUNUiPNk50s1ZDd1y2LDYaSn0ygRCGQpSy" />
+            </div>
+            <h1 class="font-headline-md text-headline-md font-bold text-primary tracking-tight">Kora Smart</h1>
+        </div>
+        <button
+            class="w-12 h-12 flex items-center justify-center rounded-full transition-all duration-300 ease-in-out active:scale-95 hover:bg-surface-variant/20">
+            <span class="material-symbols-outlined text-primary" data-icon="notifications">notifications</span>
+        </button>
+    </header>
+    <main class="pt-24 pb-32 px-container-margin max-w-screen-xl mx-auto">
+        <!-- Search & Filters Section -->
+        <section class="mb-8">
+            <div class="relative group mb-6">
+                <div class="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+                    <span class="material-symbols-outlined text-outline" data-icon="search">search</span>
+                </div>
+                <input
+                    class="w-full h-14 pl-12 pr-4 rounded-xl border-none bg-tertiary-fixed/30 backdrop-blur-md focus:ring-2 focus:ring-primary/20 text-on-surface placeholder-on-surface-variant/60 transition-all duration-300"
+                    placeholder="Search boutique stays in Abuja..." type="text" />
+            </div>
+            <!-- Filter Chips -->
+            <div class="flex gap-3 overflow-x-auto hide-scrollbar pb-2">
+                <button
+                    class="flex items-center gap-2 px-6 py-2.5 rounded-full bg-secondary text-on-secondary font-label-caps whitespace-nowrap transition-all active:scale-95">
+                    <span class="material-symbols-outlined text-[18px]" data-icon="tune">tune</span>
+                    Budget
+                </button>
+                <button
+                    class="flex items-center gap-2 px-6 py-2.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed-variant font-label-caps whitespace-nowrap transition-all hover:bg-tertiary-fixed-dim active:scale-95">
+                    Location
+                </button>
+                <button
+                    class="flex items-center gap-2 px-6 py-2.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed-variant font-label-caps whitespace-nowrap transition-all hover:bg-tertiary-fixed-dim active:scale-95">
+                    Vibe
+                </button>
+                <button
+                    class="flex items-center gap-2 px-6 py-2.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed-variant font-label-caps whitespace-nowrap transition-all hover:bg-tertiary-fixed-dim active:scale-95">
+                    Dates
+                </button>
+            </div>
+        </section>
+        <!-- Search Results Grid -->
+        <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-card-gap">
+            <!-- Result Card 1 -->
+            <div
+                class="group flex flex-col bg-surface border border-outline-variant/30 rounded-3xl overflow-hidden shadow-[0px_40px_40px_rgba(135,77,50,0.04)] transition-all duration-300 hover:shadow-[0px_40px_60px_rgba(135,77,50,0.08)]">
+                <div class="relative h-72 overflow-hidden">
+                    <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        data-alt="A wide-angle shot of a luxurious modern villa in Abuja featuring expansive glass walls, clean architectural lines, and a pristine infinity pool at dusk. The sky is a deep twilight blue, contrasting with the warm, amber glow of the interior lights. The atmosphere is elite, tranquil, and meticulously designed."
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmiyC26e1cNL9yzvnKVm-GoO2EQs3C4Uzxr7Cm3r5QyFQaXTiYDnxZcikMuEzO3FsI3xXCXoHE6uMq6XO93hXhP8pQTlGeBsxT-Nk9CGO9vy42FhqSB225qLasi8rfJ13sBDg8kEQlglZRIq3McrLtY7oEwbNu0aG_V2mngQUk3-CrM2kFWGNwPUna4gnofIbuTbLxvH2hSnj0PsLJcoVMvHX3Up1hbuiklRH9F-qSBPUxACwYOlHHXtYmPiNu3bIof21EShcqAa9j" />
+                    <div
+                        class="absolute top-4 left-4 bg-secondary/90 backdrop-blur-md text-on-secondary px-3 py-1.5 rounded-full flex items-center gap-1.5 shadow-sm">
+                        <span class="material-symbols-outlined text-[16px]" data-icon="auto_awesome" data-weight="fill"
+                            style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+                        <span class="font-label-caps text-[10px]">Perfect Vibe Match</span>
+                    </div>
+                    <button
+                        class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white transition-all hover:bg-white/40">
+                        <span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+                    </button>
+                </div>
+                <div class="p-6 flex flex-col gap-3">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <span class="font-label-caps text-on-surface-variant uppercase">Maitama, Abuja</span>
+                            <h3 class="font-headline-md text-headline-md text-on-surface mt-1">The Zenith Residence</h3>
+                        </div>
+                        <div class="flex items-center gap-1 bg-tertiary-fixed px-2 py-1 rounded-lg">
+                            <span class="material-symbols-outlined text-[16px] text-on-tertiary-fixed" data-icon="star"
+                                data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="font-label-caps text-on-tertiary-fixed">4.9</span>
+                        </div>
+                    </div>
+                    <p class="font-body-md text-on-surface-variant line-clamp-2">Ultra-minimalist architecture with
+                        smart-glass technology and private gallery space.</p>
+                    <div class="flex items-baseline gap-2 mt-2">
+                        <span class="font-headline-md text-primary">₦240,000</span>
+                        <span class="font-label-caps text-on-surface-variant">/ night</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Result Card 2 -->
+            <div
+                class="group flex flex-col bg-surface border border-outline-variant/30 rounded-3xl overflow-hidden shadow-[0px_40px_40px_rgba(135,77,50,0.04)] transition-all duration-300 hover:shadow-[0px_40px_60px_rgba(135,77,50,0.08)]">
+                <div class="relative h-72 overflow-hidden">
+                    <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        data-alt="The interior of a high-end boutique hotel suite in Abuja, showcasing rich terracotta accents, bespoke wooden furniture, and floor-to-ceiling windows overlooking a lush garden. The lighting is bright and airy, emphasizing a tactile, organic luxury aesthetic. The mood is calm, sophisticated, and warm."
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCosiSyLVkDcYghV7c1QtY26hU41tc73fchP9MoeSRtnlZfdE_E0KUBlM-T6-6D49q1SVpJZz-lNGW4hYfxdbahNPrTzBVZqSXRIXD8mBLiV06L-5eTkq6Hh3ew2lAG0szBs1NaL1MgAVR2647QdOf7K79AH-ZZkn3bI3Y31aoda5FmNa65rlhCYvF7G-c3aj4zmKIygAvyXruxaHchJIH3mxtFyswSngACkdEkFmD7DSvEldWJ6Yx1S3yQbBz5H9WmbyXG7jO4089D" />
+                    <div
+                        class="absolute top-4 left-4 bg-secondary/90 backdrop-blur-md text-on-secondary px-3 py-1.5 rounded-full flex items-center gap-1.5 shadow-sm">
+                        <span class="material-symbols-outlined text-[16px]" data-icon="bolt" data-weight="fill"
+                            style="font-variation-settings: 'FILL' 1;">bolt</span>
+                        <span class="font-label-caps text-[10px]">Intelligent Pick</span>
+                    </div>
+                    <button
+                        class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white transition-all hover:bg-white/40">
+                        <span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+                    </button>
+                </div>
+                <div class="p-6 flex flex-col gap-3">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <span class="font-label-caps text-on-surface-variant uppercase">Wuse II, Abuja</span>
+                            <h3 class="font-headline-md text-headline-md text-on-surface mt-1">Earthy Lofts</h3>
+                        </div>
+                        <div class="flex items-center gap-1 bg-tertiary-fixed px-2 py-1 rounded-lg">
+                            <span class="material-symbols-outlined text-[16px] text-on-tertiary-fixed" data-icon="star"
+                                data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="font-label-caps text-on-tertiary-fixed">4.7</span>
+                        </div>
+                    </div>
+                    <p class="font-body-md text-on-surface-variant line-clamp-2">Boutique experience featuring local
+                        craftsmanship and curated Nigerian art installations.</p>
+                    <div class="flex items-baseline gap-2 mt-2">
+                        <span class="font-headline-md text-primary">₦185,000</span>
+                        <span class="font-label-caps text-on-surface-variant">/ night</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Result Card 3 -->
+            <div
+                class="group flex flex-col bg-surface border border-outline-variant/30 rounded-3xl overflow-hidden shadow-[0px_40px_40px_rgba(135,77,50,0.04)] transition-all duration-300 hover:shadow-[0px_40px_60px_rgba(135,77,50,0.08)]">
+                <div class="relative h-72 overflow-hidden">
+                    <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        data-alt="An ultra-modern hotel lobby in Abuja with a focus on glassmorphism elements, sleek charcoal marble floors, and floating light fixtures. The space is filled with soft, ambient light that creates a sense of high-tech hospitality and elite service. The color palette is composed of neutrals and warm terracotta highlights."
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCW7XeyY8aN0KjUtHvqKYl3fDkQRJzc-sBRqk2vDLXhsbHtYUMiJC03NgmGjbZ6V6Dfb9VKtxyvAFTgVZnacn_EsuCiPFEh6atmpS6NjGkmeXOSNECtrK3HJDpwnMFgECNRqNElp5WDXRcpxRyArzKN9_leNyn3z8bBZo_AXpLYUz0rDm0yHsf2j4mFeYCAsJmxtlfLD1Cy1CzdLjYmH69vuXRTetaMndI1ThrSoprsT7S8TXMrab0x4o5o8p1XUsO_-FGVA03G1L-p" />
+                    <div
+                        class="absolute top-4 left-4 bg-secondary/90 backdrop-blur-md text-on-secondary px-3 py-1.5 rounded-full flex items-center gap-1.5 shadow-sm">
+                        <span class="material-symbols-outlined text-[16px]" data-icon="auto_awesome" data-weight="fill"
+                            style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+                        <span class="font-label-caps text-[10px]">Perfect Vibe Match</span>
+                    </div>
+                    <button
+                        class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white transition-all hover:bg-white/40">
+                        <span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+                    </button>
+                </div>
+                <div class="p-6 flex flex-col gap-3">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <span class="font-label-caps text-on-surface-variant uppercase">Asokoro, Abuja</span>
+                            <h3 class="font-headline-md text-headline-md text-on-surface mt-1">Kora Central Suites</h3>
+                        </div>
+                        <div class="flex items-center gap-1 bg-tertiary-fixed px-2 py-1 rounded-lg">
+                            <span class="material-symbols-outlined text-[16px] text-on-tertiary-fixed" data-icon="star"
+                                data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="font-label-caps text-on-tertiary-fixed">5.0</span>
+                        </div>
+                    </div>
+                    <p class="font-body-md text-on-surface-variant line-clamp-2">The pinnacle of smart living.
+                        Voice-controlled suites with automated lifestyle curation.</p>
+                    <div class="flex items-baseline gap-2 mt-2">
+                        <span class="font-headline-md text-primary">₦310,000</span>
+                        <span class="font-label-caps text-on-surface-variant">/ night</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- BottomNavBar -->
+    <nav
+        class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-safe h-20 bg-surface shadow-[0px_-20px_40px_rgba(135,77,50,0.06)] rounded-t-xl md:hidden">
+        <a class="flex flex-col items-center justify-center text-on-surface-variant px-6 py-2 transition-transform duration-200 active:scale-90 hover:text-primary"
+            href="#">
+            <span class="material-symbols-outlined" data-icon="home">home</span>
+            <span class="font-label-caps text-label-caps mt-1">Home</span>
+        </a>
+        <a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-6 py-2 transition-transform duration-200 active:scale-90"
+            href="#">
+            <span class="material-symbols-outlined" data-icon="search">search</span>
+            <span class="font-label-caps text-label-caps mt-1">Search</span>
+        </a>
+        <a class="flex flex-col items-center justify-center text-on-surface-variant px-6 py-2 transition-transform duration-200 active:scale-90 hover:text-primary"
+            href="#">
+            <span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+            <span class="font-label-caps text-label-caps mt-1">Bookings</span>
+        </a>
+        <a class="flex flex-col items-center justify-center text-on-surface-variant px-6 py-2 transition-transform duration-200 active:scale-90 hover:text-primary"
+            href="#">
+            <span class="material-symbols-outlined" data-icon="person">person</span>
+            <span class="font-label-caps text-label-caps mt-1">Profile</span>
+        </a>
+    </nav>
+    <!-- Map FAB (Floating Action Button) -->
+    <button
+        class="fixed bottom-24 right-6 w-14 h-14 bg-primary text-on-primary rounded-2xl shadow-xl flex items-center justify-center transition-all hover:scale-105 active:scale-95 z-40">
+        <span class="material-symbols-outlined" data-icon="map">map</span>
+    </button>
+</body>
+
+</html>

@@ -1,0 +1,252 @@
+<?php
+
+namespace Database\Seeders;
+
+use Illuminate\Database\Seeder;
+use App\Models\Space;
+
+class SpaceSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     */
+    public function run(): void
+    {
+        $spaces = [
+            [
+                'name' => 'Asokoro Luxury Villa',
+                'type' => 'luxury_stay',
+                'description' => 'A stunning 5-bedroom villa with private pool, modern amenities, and panoramic views of Abuja. Perfect for executive retreats and family vacations.',
+                'capacity' => 10,
+                'price_per_hour' => 500.00,
+                'price_per_year' => 150000.00,
+                'area' => 'Asokoro',
+                'owner' => 'Elite Properties Ltd',
+                'contact_info' => '+234 801 234 5678',
+                'rating' => 4.9,
+                'review_count' => 45,
+                'amenities' => json_encode(['WiFi', 'Private Pool', 'Gym', 'Kitchen', 'Security', 'Parking']),
+                'images' => json_encode([
+                    "https://cf.bstatic.com/xdata/images/hotel/max1024x768/543919788.jpg?k=2067c5aaff88a2328c9cfcd61807a6eeca84e2fd560be8bc04cb3a8818789707&o=",
+                    "https://cf.bstatic.com/xdata/images/hotel/max1024x768/543182214.jpg?k=96c34a4b74c291bfeb5fd9a4c18b87fa9893a3b36b4221c499487ae8ee30b5d0&o=",
+                    "https://cf.bstatic.com/xdata/images/hotel/max1024x768/545227077.jpg?k=7fca0540e6c91ed69f9e4bc9d99e50cbaafd09cc37f8e1e9515e33744522557a&o=",
+                    "https://cf.bstatic.com/xdata/images/hotel/max1024x768/543199861.jpg?k=d021662b8317ad73b10596085277d63c367bd3f99c54a5d6668f4b6234ca3e23&o=",
+                    "https://cf.bstatic.com/xdata/images/hotel/max1024x768/543919498.jpg?k=1e56b1d2ff8236557e532b4bb142af1658e54d74283f5e2d1dfbcbe03de3e403&o=",
+                    "https://cf.bstatic.com/xdata/images/hotel/max1024x768/543919700.jpg?k=da08ee75b9eafd4c59df88cf137609403549245da78ed600296320572f9569f7&o=",
+                    "https://cf.bstatic.com/xdata/images/hotel/max1024x768/545227092.jpg?k=08f5f4b7a87376640ca1969fb8f53575cf771744355061c37f4860414036c922&o=",
+                    "https://cf.bstatic.com/xdata/images/hotel/max1024x768/694185667.jpg?k=be43bd41ac7d97542de18ed6bffaf097d1d466dd4e1cc04a1b083c665c79747e&o="
+                ]),
+                'address' => 'Plot 123, Asokoro District, Abuja',
+                'latitude' => 9.0654,
+                'longitude' => 7.4891,
+                'available' => true,
+                'beds' => 5,
+                'bathrooms' => 6,
+                'price_per_night' => 145000.00,
+                'reviews' => json_encode([
+                    ['user' => 'John D.', 'rating' => 5, 'comment' => 'Incredible stay, the pool was perfect!'],
+                    ['user' => 'Sarah M.', 'rating' => 4, 'comment' => 'Very luxurious, but a bit far from the center.']
+                ]),
+            ],
+            [
+                'name' => 'Maitama Penthouse Suite',
+                'type' => 'luxury_stay',
+                'description' => 'Exclusive penthouse with rooftop terrace, state-of-the-art kitchen, and 24/7 concierge service. Ideal for business travelers and VIP guests.',
+                'capacity' => 6,
+                'price_per_hour' => 750.00,
+                'price_per_year' => 200000.00,
+                'area' => 'Maitama',
+                'owner' => 'Capital Estates',
+                'contact_info' => '+234 802 345 6789',
+                'rating' => 4.8,
+                'review_count' => 32,
+                'amenities' => json_encode(['WiFi', 'Rooftop Terrace', 'Concierge', 'Jacuzzi', 'Smart Home', 'Valet Parking']),
+                'images' => json_encode([
+                    "https://cf.bstatic.com/xdata/images/hotel/max1024x768/543919788.jpg?k=2067c5aaff88a2328c9cfcd61807a6eeca84e2fd560be8bc04cb3a8818789707&o=",
+                    "https://cf.bstatic.com/xdata/images/hotel/max1024x768/543182214.jpg?k=96c34a4b74c291bfeb5fd9a4c18b87fa9893a3b36b4221c499487ae8ee30b5d0&o=",
+                    "https://cf.bstatic.com/xdata/images/hotel/max1024x768/545227077.jpg?k=7fca0540e6c91ed69f9e4bc9d99e50cbaafd09cc37f8e1e9515e33744522557a&o=",
+                    "https://cf.bstatic.com/xdata/images/hotel/max1024x768/543199861.jpg?k=d021662b8317ad73b10596085277d63c367bd3f99c54a5d6668f4b6234ca3e23&o=",
+                    "https://cf.bstatic.com/xdata/images/hotel/max1024x768/543919498.jpg?k=1e56b1d2ff8236557e532b4bb142af1658e54d74283f5e2d1dfbcbe03de3e403&o=",
+                    "https://cf.bstatic.com/xdata/images/hotel/max1024x768/543919700.jpg?k=da08ee75b9eafd4c59df88cf137609403549245da78ed600296320572f9569f7&o=",
+                    "https://cf.bstatic.com/xdata/images/hotel/max1024x768/545227092.jpg?k=08f5f4b7a87376640ca1969fb8f53575cf771744355061c37f4860414036c922&o=",
+                    "https://cf.bstatic.com/xdata/images/hotel/max1024x768/694185667.jpg?k=be43bd41ac7d97542de18ed6bffaf097d1d466dd4e1cc04a1b083c665c79747e&o="
+                ]),
+                'address' => '45 Maitama Avenue, Abuja',
+                'latitude' => 9.0833,
+                'longitude' => 7.4833,
+                'available' => true,
+                'beds' => 3,
+                'bathrooms' => 4,
+                'price_per_night' => 180000.00,
+                'reviews' => json_encode([
+                    ['user' => 'David O.', 'rating' => 5, 'comment' => 'The view from the rooftop is unmatched.'],
+                ]),
+            ],
+            [
+                'name' => 'Wuse Executive Apartment',
+                'type' => 'apartment',
+                'description' => 'Modern 3-bedroom apartment in the heart of Wuse, featuring smart appliances, gym access, and proximity to business districts.',
+                'capacity' => 4,
+                'price_per_hour' => null,
+                'price_per_year' => 120000.00,
+                'area' => 'Wuse',
+                'owner' => 'Urban Living Co.',
+                'contact_info' => '+234 803 456 7890',
+                'rating' => 4.7,
+                'review_count' => 28,
+                'amenities' => json_encode(['WiFi', 'Gym', 'Smart Appliances', 'Balcony', 'Security', 'Parking']),
+                'images' => json_encode([
+                    "https://cf.bstatic.com/xdata/images/hotel/max1024x768/543919788.jpg?k=2067c5aaff88a2328c9cfcd61807a6eeca84e2fd560be8bc04cb3a8818789707&o=",
+                    "https://cf.bstatic.com/xdata/images/hotel/max1024x768/543182214.jpg?k=96c34a4b74c291bfeb5fd9a4c18b87fa9893a3b36b4221c499487ae8ee30b5d0&o=",
+                    "https://cf.bstatic.com/xdata/images/hotel/max1024x768/545227077.jpg?k=7fca0540e6c91ed69f9e4bc9d99e50cbaafd09cc37f8e1e9515e33744522557a&o=",
+                    "https://cf.bstatic.com/xdata/images/hotel/max1024x768/543199861.jpg?k=d021662b8317ad73b10596085277d63c367bd3f99c54a5d6668f4b6234ca3e23&o=",
+                    "https://cf.bstatic.com/xdata/images/hotel/max1024x768/543919498.jpg?k=1e56b1d2ff8236557e532b4bb142af1658e54d74283f5e2d1dfbcbe03de3e403&o=",
+                    "https://cf.bstatic.com/xdata/images/hotel/max1024x768/543919700.jpg?k=da08ee75b9eafd4c59df88cf137609403549245da78ed600296320572f9569f7&o=",
+                    "https://cf.bstatic.com/xdata/images/hotel/max1024x768/545227092.jpg?k=08f5f4b7a87376640ca1969fb8f53575cf771744355061c37f4860414036c922&o=",
+                    "https://cf.bstatic.com/xdata/images/hotel/max1024x768/694185667.jpg?k=be43bd41ac7d97542de18ed6bffaf097d1d466dd4e1cc04a1b083c665c79747e&o="
+                ]),
+                'address' => 'Block 7, Wuse II, Abuja',
+                'latitude' => 9.0667,
+                'longitude' => 7.4667,
+                'available' => true,
+                'beds' => 3,
+                'bathrooms' => 2,
+                'price_per_night' => 95000.00,
+            ],
+            [
+                'name' => 'Garki Mansion Estate',
+                'type' => 'luxury_stay',
+                'description' => 'Spacious mansion with multiple living areas, garden, and event facilities. Suitable for large groups and corporate events.',
+                'capacity' => 20,
+                'price_per_hour' => 1000.00,
+                'price_per_year' => 300000.00,
+                'area' => 'Garki',
+                'owner' => 'Heritage Homes',
+                'contact_info' => '+234 804 567 8901',
+                'rating' => 4.9,
+                'review_count' => 19,
+                'amenities' => json_encode(['WiFi', 'Garden', 'Event Hall', 'Kitchen', 'Security', 'Parking']),
+                'images' => json_encode([
+                    "https://cf.bstatic.com/xdata/images/hotel/max1024x768/543919788.jpg?k=2067c5aaff88a2328c9cfcd61807a6eeca84e2fd560be8bc04cb3a8818789707&o=",
+                    "https://cf.bstatic.com/xdata/images/hotel/max1024x768/543182214.jpg?k=96c34a4b74c291bfeb5fd9a4c18b87fa9893a3b36b4221c499487ae8ee30b5d0&o=",
+                    "https://cf.bstatic.com/xdata/images/hotel/max1024x768/545227077.jpg?k=7fca0540e6c91ed69f9e4bc9d99e50cbaafd09cc37f8e1e9515e33744522557a&o=",
+                    "https://cf.bstatic.com/xdata/images/hotel/max1024x768/543199861.jpg?k=d021662b8317ad73b10596085277d63c367bd3f99c54a5d6668f4b6234ca3e23&o=",
+                    "https://cf.bstatic.com/xdata/images/hotel/max1024x768/543919498.jpg?k=1e56b1d2ff8236557e532b4bb142af1658e54d74283f5e2d1dfbcbe03de3e403&o=",
+                    "https://cf.bstatic.com/xdata/images/hotel/max1024x768/543919700.jpg?k=da08ee75b9eafd4c59df88cf137609403549245da78ed600296320572f9569f7&o=",
+                    "https://cf.bstatic.com/xdata/images/hotel/max1024x768/545227092.jpg?k=08f5f4b7a87376640ca1969fb8f53575cf771744355061c37f4860414036c922&o=",
+                    "https://cf.bstatic.com/xdata/images/hotel/max1024x768/694185667.jpg?k=be43bd41ac7d97542de18ed6bffaf097d1d466dd4e1cc04a1b083c665c79747e&o="
+                ]),
+                'address' => 'Plot 89, Garki II, Abuja',
+                'available' => true,
+            ],
+            [
+                'name' => 'Jabi Waterfront Condo',
+                'type' => 'apartment',
+                'description' => 'Luxury condo overlooking the waterfront, with modern design, fitness center, and shuttle service to city center.',
+                'capacity' => 2,
+                'price_per_hour' => null,
+                'price_per_year' => 180000.00,
+                'area' => 'Jabi',
+                'owner' => 'Waterfront Developments',
+                'contact_info' => '+234 805 678 9012',
+                'rating' => 4.6,
+                'review_count' => 15,
+                'amenities' => json_encode(['WiFi', 'Waterfront View', 'Fitness Center', 'Shuttle Service', 'Security', 'Parking']),
+                'images' => json_encode([
+                    "https://cf.bstatic.com/xdata/images/hotel/max1024x768/543919788.jpg?k=2067c5aaff88a2328c9cfcd61807a6eeca84e2fd560be8bc04cb3a8818789707&o=",
+                    "https://cf.bstatic.com/xdata/images/hotel/max1024x768/543182214.jpg?k=96c34a4b74c291bfeb5fd9a4c18b87fa9893a3b36b4221c499487ae8ee30b5d0&o=",
+                    "https://cf.bstatic.com/xdata/images/hotel/max1024x768/545227077.jpg?k=7fca0540e6c91ed69f9e4bc9d99e50cbaafd09cc37f8e1e9515e33744522557a&o=",
+                    "https://cf.bstatic.com/xdata/images/hotel/max1024x768/543199861.jpg?k=d021662b8317ad73b10596085277d63c367bd3f99c54a5d6668f4b6234ca3e23&o=",
+                    "https://cf.bstatic.com/xdata/images/hotel/max1024x768/543919498.jpg?k=1e56b1d2ff8236557e532b4bb142af1658e54d74283f5e2d1dfbcbe03de3e403&o=",
+                    "https://cf.bstatic.com/xdata/images/hotel/max1024x768/543919700.jpg?k=da08ee75b9eafd4c59df88cf137609403549245da78ed600296320572f9569f7&o=",
+                    "https://cf.bstatic.com/xdata/images/hotel/max1024x768/545227092.jpg?k=08f5f4b7a87376640ca1969fb8f53575cf771744355061c37f4860414036c922&o=",
+                    "https://cf.bstatic.com/xdata/images/hotel/max1024x768/694185667.jpg?k=be43bd41ac7d97542de18ed6bffaf097d1d466dd4e1cc04a1b083c665c79747e&o="
+                ]),
+                'address' => 'Lake View Estate, Jabi, Abuja',
+                'available' => true,
+            ],
+            [
+                'name' => 'Utako Hillside Retreat',
+                'type' => 'luxury_stay',
+                'description' => 'Secluded hillside villa with breathtaking views, infinity pool, and complete privacy. Perfect for relaxation and rejuvenation.',
+                'capacity' => 8,
+                'price_per_hour' => 600.00,
+                'price_per_year' => 250000.00,
+                'area' => 'Utako',
+                'owner' => 'Hillside Resorts',
+                'contact_info' => '+234 806 789 0123',
+                'rating' => 4.8,
+                'review_count' => 22,
+                'amenities' => json_encode(['WiFi', 'Infinity Pool', 'Hiking Trails', 'Kitchen', 'Security', 'Parking']),
+                'images' => json_encode([
+                    "https://cf.bstatic.com/xdata/images/hotel/max1024x768/543919788.jpg?k=2067c5aaff88a2328c9cfcd61807a6eeca84e2fd560be8bc04cb3a8818789707&o=",
+                    "https://cf.bstatic.com/xdata/images/hotel/max1024x768/543182214.jpg?k=96c34a4b74c291bfeb5fd9a4c18b87fa9893a3b36b4221c499487ae8ee30b5d0&o=",
+                    "https://cf.bstatic.com/xdata/images/hotel/max1024x768/545227077.jpg?k=7fca0540e6c91ed69f9e4bc9d99e50cbaafd09cc37f8e1e9515e33744522557a&o=",
+                    "https://cf.bstatic.com/xdata/images/hotel/max1024x768/543199861.jpg?k=d021662b8317ad73b10596085277d63c367bd3f99c54a5d6668f4b6234ca3e23&o=",
+                    "https://cf.bstatic.com/xdata/images/hotel/max1024x768/543919498.jpg?k=1e56b1d2ff8236557e532b4bb142af1658e54d74283f5e2d1dfbcbe03de3e403&o=",
+                    "https://cf.bstatic.com/xdata/images/hotel/max1024x768/543919700.jpg?k=da08ee75b9eafd4c59df88cf137609403549245da78ed600296320572f9569f7&o=",
+                    "https://cf.bstatic.com/xdata/images/hotel/max1024x768/545227092.jpg?k=08f5f4b7a87376640ca1969fb8f53575cf771744355061c37f4860414036c922&o=",
+                    "https://cf.bstatic.com/xdata/images/hotel/max1024x768/694185667.jpg?k=be43bd41ac7d97542de18ed6bffaf097d1d466dd4e1cc04a1b083c665c79747e&o="
+                ]),
+                'address' => 'Hillside Road, Utako, Abuja',
+                'available' => true,
+            ],
+            [
+                'name' => 'CBD Skyline Apartment',
+                'type' => 'apartment',
+                'description' => 'High-rise apartment in the Central Business District with city views, business center, and 24/7 security.',
+                'capacity' => 3,
+                'price_per_hour' => null,
+                'price_per_year' => 160000.00,
+                'area' => 'Central Business District (CBD)',
+                'owner' => 'Skyline Properties',
+                'contact_info' => '+234 807 890 1234',
+                'rating' => 4.5,
+                'review_count' => 38,
+                'amenities' => json_encode(['WiFi', 'City View', 'Business Center', 'Gym', 'Security', 'Parking']),
+                'images' => json_encode([
+                    "https://cf.bstatic.com/xdata/images/hotel/max1024x768/543919788.jpg?k=2067c5aaff88a2328c9cfcd61807a6eeca84e2fd560be8bc04cb3a8818789707&o=",
+                    "https://cf.bstatic.com/xdata/images/hotel/max1024x768/543182214.jpg?k=96c34a4b74c291bfeb5fd9a4c18b87fa9893a3b36b4221c499487ae8ee30b5d0&o=",
+                    "https://cf.bstatic.com/xdata/images/hotel/max1024x768/545227077.jpg?k=7fca0540e6c91ed69f9e4bc9d99e50cbaafd09cc37f8e1e9515e33744522557a&o=",
+                    "https://cf.bstatic.com/xdata/images/hotel/max1024x768/543199861.jpg?k=d021662b8317ad73b10596085277d63c367bd3f99c54a5d6668f4b6234ca3e23&o=",
+                    "https://cf.bstatic.com/xdata/images/hotel/max1024x768/543919498.jpg?k=1e56b1d2ff8236557e532b4bb142af1658e54d74283f5e2d1dfbcbe03de3e403&o=",
+                    "https://cf.bstatic.com/xdata/images/hotel/max1024x768/543919700.jpg?k=da08ee75b9eafd4c59df88cf137609403549245da78ed600296320572f9569f7&o=",
+                    "https://cf.bstatic.com/xdata/images/hotel/max1024x768/545227092.jpg?k=08f5f4b7a87376640ca1969fb8f53575cf771744355061c37f4860414036c922&o=",
+                    "https://cf.bstatic.com/xdata/images/hotel/max1024x768/694185667.jpg?k=be43bd41ac7d97542de18ed6bffaf097d1d466dd4e1cc04a1b083c665c79747e&o="
+                ]),
+                'address' => 'Herbert Macaulay Way, CBD, Abuja',
+                'available' => true,
+            ],
+            [
+                'name' => 'Lugbe Garden Villa',
+                'type' => 'luxury_stay',
+                'description' => 'Tranquil villa surrounded by gardens, with outdoor dining area and proximity to recreational facilities.',
+                'capacity' => 12,
+                'price_per_hour' => 450.00,
+                'price_per_year' => 140000.00,
+                'area' => 'Lugbe',
+                'owner' => 'Garden Estates',
+                'contact_info' => '+234 808 901 2345',
+                'rating' => 4.7,
+                'review_count' => 14,
+                'amenities' => json_encode(['WiFi', 'Garden', 'Outdoor Dining', 'Kitchen', 'Security', 'Parking']),
+                'images' => json_encode([
+                    "https://cf.bstatic.com/xdata/images/hotel/max1024x768/543919788.jpg?k=2067c5aaff88a2328c9cfcd61807a6eeca84e2fd560be8bc04cb3a8818789707&o=",
+                    "https://cf.bstatic.com/xdata/images/hotel/max1024x768/543182214.jpg?k=96c34a4b74c291bfeb5fd9a4c18b87fa9893a3b36b4221c499487ae8ee30b5d0&o=",
+                    "https://cf.bstatic.com/xdata/images/hotel/max1024x768/545227077.jpg?k=7fca0540e6c91ed69f9e4bc9d99e50cbaafd09cc37f8e1e9515e33744522557a&o=",
+                    "https://cf.bstatic.com/xdata/images/hotel/max1024x768/543199861.jpg?k=d021662b8317ad73b10596085277d63c367bd3f99c54a5d6668f4b6234ca3e23&o=",
+                    "https://cf.bstatic.com/xdata/images/hotel/max1024x768/543919498.jpg?k=1e56b1d2ff8236557e532b4bb142af1658e54d74283f5e2d1dfbcbe03de3e403&o=",
+                    "https://cf.bstatic.com/xdata/images/hotel/max1024x768/543919700.jpg?k=da08ee75b9eafd4c59df88cf137609403549245da78ed600296320572f9569f7&o=",
+                    "https://cf.bstatic.com/xdata/images/hotel/max1024x768/545227092.jpg?k=08f5f4b7a87376640ca1969fb8f53575cf771744355061c37f4860414036c922&o=",
+                    "https://cf.bstatic.com/xdata/images/hotel/max1024x768/694185667.jpg?k=be43bd41ac7d97542de18ed6bffaf097d1d466dd4e1cc04a1b083c665c79747e&o="
+                ]),
+                'address' => 'Lugbe District, Abuja',
+                'available' => true,
+            ],
+        ];
+
+        foreach ($spaces as $space) {
+            Space::create($space);
+        }
+    }
+}

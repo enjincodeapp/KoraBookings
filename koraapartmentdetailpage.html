@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-container": "#817358",
+                        "on-primary": "#ffffff",
+                        "on-primary-container": "#fffbff",
+                        "surface-container": "#f0eded",
+                        "on-surface": "#1b1c1c",
+                        "inverse-on-surface": "#f3f0ef",
+                        "error": "#ba1a1a",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed-variant": "#51452d",
+                        "primary-fixed": "#ffdbcd",
+                        "tertiary-fixed-dim": "#d6c4a5",
+                        "on-primary-fixed-variant": "#6e381f",
+                        "surface-dim": "#dcd9d9",
+                        "primary-container": "#a46448",
+                        "on-secondary": "#ffffff",
+                        "background": "#fcf9f8",
+                        "inverse-primary": "#ffb596",
+                        "outline-variant": "#d8c2ba",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-container": "#4f6a5b",
+                        "on-secondary-fixed": "#062014",
+                        "on-error": "#ffffff",
+                        "tertiary": "#675a41",
+                        "surface-bright": "#fcf9f8",
+                        "primary-fixed-dim": "#ffb596",
+                        "secondary": "#496455",
+                        "on-tertiary-container": "#fffbff",
+                        "on-background": "#1b1c1c",
+                        "tertiary-fixed": "#f3e0c0",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-fixed": "#231a06",
+                        "primary": "#874d32",
+                        "outline": "#85736c",
+                        "surface": "#fcf9f8",
+                        "on-error-container": "#93000a",
+                        "secondary-container": "#ccead6",
+                        "on-primary-fixed": "#360f00",
+                        "on-secondary-fixed-variant": "#324c3e",
+                        "on-surface-variant": "#53433e",
+                        "inverse-surface": "#303030",
+                        "surface-variant": "#e4e2e1",
+                        "surface-container-highest": "#e4e2e1",
+                        "surface-tint": "#8a4f34",
+                        "surface-container-low": "#f6f3f2",
+                        "secondary-fixed-dim": "#b0cdbb",
+                        "surface-container-high": "#eae7e7",
+                        "secondary-fixed": "#ccead6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "16px",
+                        "container-margin": "24px",
+                        "card-gap": "20px",
+                        "unit": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "body-md": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", { "lineHeight": "1.3", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "label-caps": ["12px", { "lineHeight": "1.2", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "0.02em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "letterSpacing": "0.01em", "fontWeight": "600" }]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        body {
+            background-color: #fcf9f8;
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body class="text-on-background">
+    <!-- Top Navigation Shell -->
+    <header
+        class="fixed top-0 left-0 w-full flex justify-between items-center px-container-margin py-unit h-16 bg-surface/80 backdrop-blur-xl z-50 shadow-[0px_40px_40px_rgba(135,77,50,0.04)]">
+        <div class="flex items-center gap-4">
+            <button class="transition-all duration-300 ease-in-out active:scale-95 text-on-surface-variant">
+                <span class="material-symbols-outlined">arrow_back</span>
+            </button>
+            <h1 class="font-headline-md text-headline-md font-bold text-primary tracking-tight">Kora Smart</h1>
+        </div>
+        <div class="flex items-center gap-4">
+            <button class="transition-all duration-300 ease-in-out active:scale-95 text-on-surface-variant">
+                <span class="material-symbols-outlined">share</span>
+            </button>
+            <button class="transition-all duration-300 ease-in-out active:scale-95 text-on-surface-variant">
+                <span class="material-symbols-outlined">favorite</span>
+            </button>
+        </div>
+    </header>
+    <main class="pb-32 pt-16">
+        <!-- Hero Section -->
+        <section class="relative w-full h-[442px] md:h-[618px] overflow-hidden">
+            <img class="w-full h-full object-cover"
+                data-alt="A luxurious hotel suite in Abuja featuring elegant Nigerian craftsmanship and modern architectural lines. Warm morning light filters through floor-to-ceiling windows, illuminating a palette of soft terracottas, sands, and deep forest greens. The furniture is minimalist but tactile, with plush textures and polished stone surfaces. The atmosphere is calm, sophisticated, and elite, embodying a high-end boutique hospitality experience."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKI5--r4hx8Nok2sFBVtpyrssFtxACqBsUThBTcAUe8RHqlW7gqArNyUp_ujNKohk_S5eNMgUbKTi9zxdLlv1pJ2J--cLKxqEQl7d7rGU3Spus92s-Eun2yl_7_j9pECSmNp1goQg4wdAqR4PXtgv1KrFNWZDQ3Y4IkbYOdlt9ilSZlFIOMMlPe6Qht4rh8nP-wRSiQCc20fwCRXxHwGhUB8PL2do6He19Gs34j178KcFxopytzKhZocfjdJhTkKvRKJPiLUkeGlLR" />
+            <div
+                class="absolute bottom-0 left-0 w-full p-container-margin bg-gradient-to-t from-black/60 to-transparent">
+                <div class="inline-flex items-center px-3 py-1 bg-secondary text-on-primary rounded-full mb-3">
+                    <span class="material-symbols-outlined text-[14px] mr-1"
+                        style="font-variation-settings: 'FILL' 1;">star</span>
+                    <span class="font-label-caps text-label-caps">PREMIUM SELECTION</span>
+                </div>
+                <h2 class="font-display-lg text-display-lg text-white mb-2">The Zuma Serenity Suite</h2>
+                <div class="flex items-center text-white/90">
+                    <span class="material-symbols-outlined mr-1">location_on</span>
+                    <span class="font-body-md text-body-md">Maitama District, Abuja</span>
+                </div>
+            </div>
+        </section>
+        <!-- Content Grid -->
+        <div class="max-w-[1280px] mx-auto px-container-margin mt-10 grid grid-cols-1 md:grid-cols-12 gap-10">
+            <!-- Left Column: Details -->
+            <div class="md:col-span-8 space-y-12">
+                <!-- Overview -->
+                <section>
+                    <h3 class="font-headline-lg text-headline-lg text-on-surface mb-4">Overview</h3>
+                    <p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+                        Experience the pinnacle of refined Abuja hospitality. The Zuma Serenity Suite offers an
+                        intelligent living environment that adapts to your preferences. From automated lighting that
+                        mimics the Nigerian sun's natural cycle to a personalized AI concierge, every detail is designed
+                        for the modern high-net-worth traveler.
+                    </p>
+                </section>
+                <!-- Amenities Bento Grid -->
+                <section>
+                    <h3 class="font-headline-lg text-headline-lg text-on-surface mb-6">World-Class Amenities</h3>
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                        <div
+                            class="p-6 bg-surface-container-low border border-outline-variant/30 rounded-xl flex flex-col items-center text-center transition-all hover:shadow-lg">
+                            <span class="material-symbols-outlined text-primary mb-3 text-3xl">pool</span>
+                            <span class="font-label-caps text-label-caps text-on-surface-variant">Infinity Pool</span>
+                        </div>
+                        <div
+                            class="p-6 bg-surface-container-low border border-outline-variant/30 rounded-xl flex flex-col items-center text-center transition-all hover:shadow-lg">
+                            <span class="material-symbols-outlined text-primary mb-3 text-3xl">restaurant</span>
+                            <span class="font-label-caps text-label-caps text-on-surface-variant">Fine Dining</span>
+                        </div>
+                        <div
+                            class="p-6 bg-surface-container-low border border-outline-variant/30 rounded-xl flex flex-col items-center text-center transition-all hover:shadow-lg">
+                            <span class="material-symbols-outlined text-primary mb-3 text-3xl">fitness_center</span>
+                            <span class="font-label-caps text-label-caps text-on-surface-variant">Elite Gym</span>
+                        </div>
+                        <div
+                            class="p-6 bg-surface-container-low border border-outline-variant/30 rounded-xl flex flex-col items-center text-center transition-all hover:shadow-lg">
+                            <span class="material-symbols-outlined text-primary mb-3 text-3xl">spa</span>
+                            <span class="font-label-caps text-label-caps text-on-surface-variant">Wellness Spa</span>
+                        </div>
+                    </div>
+                </section>
+                <!-- AI Concierge Feature Card -->
+                <section
+                    class="glass-panel p-8 rounded-2xl border border-primary/10 shadow-[0px_20px_40px_rgba(135,77,50,0.06)] relative overflow-hidden">
+                    <div class="absolute top-0 right-0 p-4 opacity-10">
+                        <span class="material-symbols-outlined text-[120px]">smart_toy</span>
+                    </div>
+                    <div class="relative z-10">
+                        <div class="flex items-center gap-2 mb-4">
+                            <span class="material-symbols-outlined text-primary">auto_awesome</span>
+                            <span class="font-label-caps text-label-caps text-primary">KORA INTELLIGENCE</span>
+                        </div>
+                        <h4 class="font-headline-md text-headline-md mb-2">Invisible Concierge</h4>
+                        <p class="font-body-md text-body-md text-on-surface-variant max-w-md">
+                            Your stay includes Kora Smart's exclusive AI assistant. From booking private gallery tours
+                            in Abuja to adjusting your room's scent profile, Kora anticipates your needs before you ask.
+                        </p>
+                    </div>
+                </section>
+                <!-- Reviews -->
+                <section>
+                    <div class="flex justify-between items-end mb-8">
+                        <div>
+                            <h3 class="font-headline-lg text-headline-lg text-on-surface">Guest Experiences</h3>
+                            <div class="flex items-center gap-2 mt-2">
+                                <span class="material-symbols-outlined text-primary"
+                                    style="font-variation-settings: 'FILL' 1;">verified</span>
+                                <span class="font-body-md text-body-md font-semibold">4.9 / 5.0 Rating</span>
+                            </div>
+                        </div>
+                        <button class="text-primary font-label-caps text-label-caps border-b border-primary pb-1">VIEW
+                            ALL 124 REVIEWS</button>
+                    </div>
+                    <div class="space-y-6">
+                        <div class="p-6 bg-white rounded-xl shadow-sm border border-surface-variant">
+                            <div class="flex justify-between mb-4">
+                                <div class="flex items-center gap-3">
+                                    <div
+                                        class="w-10 h-10 rounded-full bg-tertiary-fixed flex items-center justify-center font-bold text-on-tertiary-fixed">
+                                        AO</div>
+                                    <div>
+                                        <div class="font-body-md font-bold">Adekunle O.</div>
+                                        <div class="text-[12px] text-outline">Verified High-Tier Member</div>
+                                    </div>
+                                </div>
+                                <div class="flex text-primary">
+                                    <span class="material-symbols-outlined text-[18px]"
+                                        style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="material-symbols-outlined text-[18px]"
+                                        style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="material-symbols-outlined text-[18px]"
+                                        style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="material-symbols-outlined text-[18px]"
+                                        style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="material-symbols-outlined text-[18px]"
+                                        style="font-variation-settings: 'FILL' 1;">star</span>
+                                </div>
+                            </div>
+                            <p class="font-body-md text-body-md text-on-surface-variant italic">
+                                "The seamless integration of technology and luxury is unlike anything I've seen in Lagos
+                                or Abuja. Truly a global standard experience."
+                            </p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <!-- Right Column: Map & Context (Desktop Only) -->
+            <div class="hidden md:block md:col-span-4">
+                <div class="sticky top-24 space-y-6">
+                    <div class="rounded-2xl overflow-hidden h-64 border border-outline-variant/30 shadow-sm">
+                        <img class="w-full h-full object-cover"
+                            data-alt="A stylized, minimalist map view of Abuja's Maitama district. The map uses a sophisticated color palette of warm sand and charcoal tones, highlighting the elite neighborhood's grid. Minimal icons indicate nearby landmarks like the National Mosque and Zuma Rock in the distance. The lighting is bright and clean, consistent with a premium concierge application's visual language."
+                            data-location="Abuja"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtWEU0QvJke1hW2MXXJsvyX5aiRa0qGC8HrC0w_OJIk0hCu4oMyfqctaOe732SPh5bysh3u5J7t-6mTY2OVEjmyjS-ORHDqA4gbcc0S5raJE6yArX0sgwWniVC9uf_Uoc4d2uabuyxQlFtWnshDDJNxuF8dKLq4mTygHFVAhDKh8vELYtFhNHHuwLc5AigmWqCReWkt8v-7eZbY3NwB8yYDIIQsK2zqvili_vChaksbvR7tO8Xw3R3TMdooAUvRqaTllgjrEqGraCy" />
+                    </div>
+                    <div class="p-6 bg-surface-container-high rounded-2xl">
+                        <h5 class="font-label-caps text-label-caps text-on-surface mb-3">LOCATION HIGHLIGHTS</h5>
+                        <ul class="space-y-3">
+                            <li class="flex items-center gap-3">
+                                <span class="material-symbols-outlined text-primary text-[20px]">local_airport</span>
+                                <span class="font-body-md text-body-md">35 mins to Nnamdi Azikiwe Int'l</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="material-symbols-outlined text-primary text-[20px]">account_balance</span>
+                                <span class="font-body-md text-body-md">8 mins to Central Business District</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Sticky Bottom Booking Bar -->
+    <footer
+        class="fixed bottom-0 left-0 w-full z-50 bg-surface/90 backdrop-blur-xl h-24 flex items-center px-container-margin shadow-[0px_-20px_40px_rgba(135,77,50,0.06)]">
+        <div class="max-w-[1280px] mx-auto w-full flex justify-between items-center">
+            <div>
+                <div class="flex items-baseline gap-1">
+                    <span class="font-headline-md text-headline-md font-bold text-on-surface">₦185,000</span>
+                    <span class="font-body-md text-body-md text-on-surface-variant">/ night</span>
+                </div>
+                <div class="font-label-caps text-[10px] text-secondary font-bold">ALL TAXES INCLUDED</div>
+            </div>
+            <button
+                class="bg-primary text-on-primary px-10 py-4 rounded-xl font-headline-md text-[18px] font-semibold transition-all duration-300 active:scale-95 shadow-lg shadow-primary/20">
+                Book Now
+            </button>
+        </div>
+    </footer>
+</body>
+
+</html>

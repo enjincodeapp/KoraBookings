@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-container": "#817358",
+                        "on-primary": "#ffffff",
+                        "on-primary-container": "#fffbff",
+                        "surface-container": "#f0eded",
+                        "on-surface": "#1b1c1c",
+                        "inverse-on-surface": "#f3f0ef",
+                        "error": "#ba1a1a",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed-variant": "#51452d",
+                        "primary-fixed": "#ffdbcd",
+                        "tertiary-fixed-dim": "#d6c4a5",
+                        "on-primary-fixed-variant": "#6e381f",
+                        "surface-dim": "#dcd9d9",
+                        "primary-container": "#a46448",
+                        "on-secondary": "#ffffff",
+                        "background": "#fcf9f8",
+                        "inverse-primary": "#ffb596",
+                        "outline-variant": "#d8c2ba",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-container": "#4f6a5b",
+                        "on-secondary-fixed": "#062014",
+                        "on-error": "#ffffff",
+                        "tertiary": "#675a41",
+                        "surface-bright": "#fcf9f8",
+                        "primary-fixed-dim": "#ffb596",
+                        "secondary": "#496455",
+                        "on-tertiary-container": "#fffbff",
+                        "on-background": "#1b1c1c",
+                        "tertiary-fixed": "#f3e0c0",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-fixed": "#231a06",
+                        "primary": "#874d32",
+                        "outline": "#85736c",
+                        "surface": "#fcf9f8",
+                        "on-error-container": "#93000a",
+                        "secondary-container": "#ccead6",
+                        "on-primary-fixed": "#360f00",
+                        "on-secondary-fixed-variant": "#324c3e",
+                        "on-surface-variant": "#53433e",
+                        "inverse-surface": "#303030",
+                        "surface-variant": "#e4e2e1",
+                        "surface-container-highest": "#e4e2e1",
+                        "surface-tint": "#8a4f34",
+                        "surface-container-low": "#f6f3f2",
+                        "secondary-fixed-dim": "#b0cdbb",
+                        "surface-container-high": "#eae7e7",
+                        "secondary-fixed": "#ccead6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "16px",
+                        "container-margin": "24px",
+                        "card-gap": "20px",
+                        "unit": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "body-md": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", { "lineHeight": "1.3", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "label-caps": ["12px", { "lineHeight": "1.2", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "0.02em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "letterSpacing": "0.01em", "fontWeight": "600" }]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body class="bg-background text-on-background font-body-md min-h-screen pb-24">
+    <!-- TopAppBar -->
+    <header
+        class="fixed top-0 left-0 w-full flex justify-between items-center px-container-margin py-unit h-16 bg-surface/80 backdrop-blur-xl z-50 shadow-[0px_40px_40px_rgba(135,77,50,0.04)]">
+        <div class="flex items-center gap-4">
+            <button class="transition-all duration-300 ease-in-out active:scale-95 text-primary">
+                <span class="material-symbols-outlined">arrow_back</span>
+            </button>
+            <h1 class="font-headline-md text-headline-md font-bold text-primary tracking-tight">Kora Smart</h1>
+        </div>
+        <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-on-surface-variant">notifications</span>
+            <div class="w-8 h-8 rounded-full bg-primary-fixed overflow-hidden">
+                <img alt="User"
+                    data-alt="A professional close-up portrait of a sophisticated woman with a warm expression. She is in a high-end, softly lit hotel lobby in Abuja, featuring warm wooden textures and Nigerian art in the background. The lighting is soft and cinematic, emphasizing a modern and premium lifestyle aesthetic."
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcU2Yn9v79C6KwHqCx_-CLzK1twwQ0vQGv0lnEes8YkasKsRninNr55lREQw2Oq-wwMLTXqtPG8D6qa8kR2EwpVKRsoWZ4ntt1sFfDvI6kVeYUqQtPef-yFhh3-8dtgwY-g3UacWDykdqKzA7SjVd27SzW_ZAKkbXxKaRgR3yAjqXtEDR71OWBaSRX-z3hCYHew1MJQvsvJ1EphAkrmvV9sivp2I_CV1lqyOPe0T4aqmpr8Cnjp4kAls4UQhE6JiamGK5x_rR0CLAB" />
+            </div>
+        </div>
+    </header>
+    <main class="mt-20 px-container-margin max-w-lg mx-auto">
+        <!-- Progress Indicator -->
+        <div class="flex items-center justify-between mb-10 mt-6 px-4">
+            <div class="flex flex-col items-center gap-2">
+                <div
+                    class="w-8 h-8 rounded-full bg-secondary text-on-secondary flex items-center justify-center text-xs font-bold">
+                    1</div>
+                <span class="font-label-caps text-label-caps text-secondary">DETAILS</span>
+            </div>
+            <div class="h-[2px] flex-1 bg-secondary-container mx-2 -mt-6"></div>
+            <div class="flex flex-col items-center gap-2 opacity-50">
+                <div
+                    class="w-8 h-8 rounded-full bg-surface-variant text-on-surface-variant flex items-center justify-center text-xs font-bold border border-outline-variant">
+                    2</div>
+                <span class="font-label-caps text-label-caps text-on-surface-variant">PAYMENT</span>
+            </div>
+            <div class="h-[2px] flex-1 bg-surface-variant mx-2 -mt-6"></div>
+            <div class="flex flex-col items-center gap-2 opacity-50">
+                <div
+                    class="w-8 h-8 rounded-full bg-surface-variant text-on-surface-variant flex items-center justify-center text-xs font-bold border border-outline-variant">
+                    3</div>
+                <span class="font-label-caps text-label-caps text-on-surface-variant">CONFIRM</span>
+            </div>
+        </div>
+        <!-- Stay Summary Card -->
+        <section
+            class="bg-surface-container-lowest rounded-xl p-4 shadow-[0px_40px_40px_rgba(135,77,50,0.04)] border border-surface-variant mb-8">
+            <div class="flex gap-4">
+                <div class="w-24 h-24 rounded-lg overflow-hidden flex-shrink-0">
+                    <img class="w-full h-full object-cover"
+                        data-alt="A luxurious boutique hotel room in Abuja featuring minimalist Nigerian-inspired decor. The room is bathed in golden hour sunlight through large windows, showcasing high-quality linens, handcrafted furniture, and a tranquil, warm atmosphere. The color palette is composed of earthy terracotta, soft sands, and deep forest greens."
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBiY7dM52xFx1XBGNuSAz4FuNoFNTL1rEra03wk-UgxuoXDskPvVzt6Lvf_t2dMiBIfLXuOFpnA2CmilQroDD0_rUIw308w6VIA-zt06YSWox-qog45uaEeGKqkcazrVUwff1Dz45nKUNV5yetpJeufnUfHJMbltiq8NkQyxuFsc05_5S9ytZlyl7CSIti3bzuRJ6KWnO2wm5txF_ExWQFeOR6kwqeMAvs4PbM9YTqjT-txl5EZJRVBaYlStlk8HFqJ7M2ovhnWxr8" />
+                </div>
+                <div class="flex flex-col justify-center">
+                    <span class="font-label-caps text-label-caps text-primary mb-1">SELECTED SUITE</span>
+                    <h2 class="font-headline-md text-[18px] text-on-surface font-semibold mb-1 leading-tight">The Zuma
+                        Royal Suite</h2>
+                    <div class="flex items-center gap-2 text-on-surface-variant">
+                        <span class="material-symbols-outlined text-[16px]">calendar_month</span>
+                        <span class="text-sm">Oct 24 - Oct 28, 2023</span>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-4 pt-4 border-t border-surface-variant flex justify-between items-center">
+                <div class="text-sm text-on-surface-variant">4 Nights, 2 Guests</div>
+                <div class="font-headline-md text-[20px] text-primary font-bold">₦240,000</div>
+            </div>
+        </section>
+        <!-- Form: Guest Details -->
+        <section class="space-y-6 mb-10">
+            <h3 class="font-headline-md text-[20px] text-on-surface font-semibold">Guest Information</h3>
+            <div class="space-y-4">
+                <div class="relative">
+                    <label
+                        class="absolute -top-2 left-3 bg-background px-1 text-[10px] font-bold text-primary tracking-widest uppercase">Full
+                        Name</label>
+                    <input
+                        class="w-full bg-surface-container-low border border-outline-variant rounded-xl px-4 py-4 focus:ring-primary focus:border-primary text-on-surface font-body-md"
+                        type="text" value="Aisha Bello" />
+                </div>
+                <div class="relative">
+                    <label
+                        class="absolute -top-2 left-3 bg-background px-1 text-[10px] font-bold text-outline tracking-widest uppercase">Email
+                        Address</label>
+                    <input
+                        class="w-full bg-surface-container-low border border-outline-variant rounded-xl px-4 py-4 focus:ring-primary focus:border-primary text-on-surface font-body-md"
+                        placeholder="aisha.b@example.com" type="email" />
+                </div>
+                <div class="relative">
+                    <label
+                        class="absolute -top-2 left-3 bg-background px-1 text-[10px] font-bold text-outline tracking-widest uppercase">Phone
+                        Number</label>
+                    <input
+                        class="w-full bg-surface-container-low border border-outline-variant rounded-xl px-4 py-4 focus:ring-primary focus:border-primary text-on-surface font-body-md"
+                        placeholder="+234 803 000 0000" type="tel" />
+                </div>
+            </div>
+        </section>
+        <!-- Payment Selection -->
+        <section class="space-y-4 mb-10">
+            <h3 class="font-headline-md text-[20px] text-on-surface font-semibold">Payment Method</h3>
+            <div class="grid grid-cols-1 gap-3">
+                <!-- Option 1 Active -->
+                <div
+                    class="flex items-center p-4 rounded-xl border-2 border-primary bg-primary-fixed/20 cursor-pointer">
+                    <span class="material-symbols-outlined text-primary mr-3"
+                        style="font-variation-settings: 'FILL' 1;">credit_card</span>
+                    <div class="flex-1">
+                        <p class="text-sm font-semibold text-on-surface">Debit / Credit Card</p>
+                        <p class="text-xs text-on-surface-variant">Mastercard, Visa, Verve</p>
+                    </div>
+                    <div class="w-5 h-5 rounded-full border-2 border-primary flex items-center justify-center">
+                        <div class="w-2.5 h-2.5 rounded-full bg-primary"></div>
+                    </div>
+                </div>
+                <!-- Option 2 -->
+                <div
+                    class="flex items-center p-4 rounded-xl border border-outline-variant bg-surface-container-lowest hover:border-primary transition-colors cursor-pointer">
+                    <span class="material-symbols-outlined text-on-surface-variant mr-3">account_balance</span>
+                    <div class="flex-1">
+                        <p class="text-sm font-semibold text-on-surface">Bank Transfer</p>
+                        <p class="text-xs text-on-surface-variant">Direct transfer via Kuda or GTBank</p>
+                    </div>
+                    <div class="w-5 h-5 rounded-full border border-outline-variant"></div>
+                </div>
+                <!-- Option 3 -->
+                <div
+                    class="flex items-center p-4 rounded-xl border border-outline-variant bg-surface-container-lowest hover:border-primary transition-colors cursor-pointer">
+                    <span class="material-symbols-outlined text-on-surface-variant mr-3">wallet</span>
+                    <div class="flex-1">
+                        <p class="text-sm font-semibold text-on-surface">Kora Pay</p>
+                        <p class="text-xs text-on-surface-variant">Use your smart concierge wallet</p>
+                    </div>
+                    <div class="w-5 h-5 rounded-full border border-outline-variant"></div>
+                </div>
+            </div>
+        </section>
+        <!-- AI Concierge Suggestion (Glassmorphism) -->
+        <div
+            class="bg-tertiary-fixed/30 backdrop-blur-md rounded-xl p-4 border border-tertiary-fixed-dim/50 mb-10 flex gap-4 items-start">
+            <div
+                class="w-10 h-10 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center flex-shrink-0">
+                <span class="material-symbols-outlined text-[20px]">auto_awesome</span>
+            </div>
+            <div>
+                <p class="text-sm text-on-tertiary-fixed-variant font-medium">Smart Add-on Recommendation</p>
+                <p class="text-xs text-on-tertiary-fixed-variant/80 mt-1">Based on your arrival time, I've reserved a
+                    private chauffeur from Nnamdi Azikiwe Airport. Would you like to include this for ₦15,000?</p>
+                <button class="mt-3 text-xs font-bold text-primary flex items-center gap-1">
+                    YES, ADD TO BOOKING <span class="material-symbols-outlined text-[14px]">add_circle</span>
+                </button>
+            </div>
+        </div>
+    </main>
+    <!-- Bottom Action Bar -->
+    <div
+        class="fixed bottom-0 left-0 w-full bg-surface border-t border-surface-variant p-container-margin shadow-[0px_-20px_40px_rgba(135,77,50,0.06)] flex items-center justify-between gap-6 z-50">
+        <div class="flex flex-col">
+            <span class="text-[10px] font-bold text-outline tracking-widest uppercase">Total Amount</span>
+            <span class="font-headline-md text-headline-md text-on-surface font-bold">₦240,000</span>
+        </div>
+        <button
+            class="flex-1 bg-primary text-on-primary font-bold py-4 rounded-xl shadow-lg transition-all duration-300 active:scale-95 hover:bg-primary/90">
+            Confirm Booking
+        </button>
+    </div>
+</body>
+
+</html>
