@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Booking;
 use App\Models\Transaction;
+use App\Notifications\PaymentCompletedNotification;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
@@ -175,6 +176,8 @@ class PaymentController extends Controller
 
             // Send payment confirmation email
             $this->sendPaymentConfirmationEmail($booking, $transaction);
+
+            $booking->user->notify(new PaymentCompletedNotification($transaction));
 
             return response()->json([
                 'success' => true,

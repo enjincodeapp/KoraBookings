@@ -21,7 +21,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Test User',
             'email' => 'test@example.com',
         ]);
-// what this does 
+
         $this->call([
             SpaceSeeder::class,
         ]);

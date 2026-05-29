@@ -6,7 +6,8 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\SpaceController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\PaymentController;
-use App\Http\Controllers\UserController;    
+use App\Http\Controllers\NotificationController;
+use App\Http\Controllers\UserController;
 
 // Health check endpoint
 Route::get('/health', function () {
@@ -61,4 +62,12 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('/transactions', [PaymentController::class, 'getTransactionHistory']);
     Route::get('/transactions/{id}', [PaymentController::class, 'getTransactionDetails']);
     // Route::post('/bookings/{id}/request-refund', [PaymentController::class, 'requestRefund']);
+
+    // Notification routes
+    Route::controller(NotificationController::class)->prefix('notifications')->group(function () {
+        Route::get('/', 'index');
+        Route::get('/unread-count', 'unreadCount');
+        Route::post('/read-all', 'markAllAsRead');
+        Route::post('/{id}/read', 'markAsRead');
+    });
 });

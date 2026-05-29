@@ -15,13 +15,14 @@ return Application::configure(basePath: dirname(__DIR__))
         //
     })
     ->withExceptions(function (Exceptions $exceptions): void {
-        $exceptions->respond(function (\Throwable $exception) {
-            // Return JSON for API routes
-            if (request()->is('api/*')) {
+        $exceptions->respond(function (\Symfony\Component\HttpFoundation\Response $response, \Throwable $exception, \Illuminate\Http\Request $request) {
+            if ($request->is('api/*')) {
                 return response()->json([
                     'message' => $exception->getMessage(),
                     'error' => class_basename($exception),
-                ], 500);
+                ], $response->getStatusCode() ?: 500);
             }
+
+            return $response;
         });
     })->create();

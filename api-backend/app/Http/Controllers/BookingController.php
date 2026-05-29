@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Booking;
 use App\Models\Space;
+use App\Notifications\BookingCreatedNotification;
+use App\Notifications\BookingCancelledNotification;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Log;
@@ -99,6 +101,8 @@ class BookingController extends Controller
 
         $booking->load('space');
 
+        $request->user()->notify(new BookingCreatedNotification($booking));
+
         return response()->json([
             'message' => 'Booking created. Please proceed to payment.',
             'booking' => $booking
@@ -182,6 +186,8 @@ class BookingController extends Controller
                 'cancelled_at' => now(),
                 'cancellation_reason' => $request->input('reason', 'User requested cancellation'),
             ]);
+
+            $request->user()->notify(new BookingCancelledNotification($booking));
 
             return response()->json([
                 'message' => 'Booking cancelled successfully',
