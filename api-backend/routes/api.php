@@ -7,6 +7,7 @@ use App\Http\Controllers\SpaceController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\NotificationController;
+use App\Http\Controllers\ConfigController;
 use App\Http\Controllers\UserController;
 
 // Health check endpoint
@@ -14,9 +15,13 @@ Route::get('/health', function () {
     return response()->json(['status' => 'ok']);
 });
 
+// Public client configuration (Google client IDs, etc.)
+Route::get('/config', [ConfigController::class, 'show']);
+
 // Authentication routes
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
+Route::post('/google-login', [AuthController::class, 'googleLogin']);
 Route::post('/verify-otp', [AuthController::class, 'verifyOtp']);
 Route::post('/resend-otp', [AuthController::class, 'resendOtp']);
 Route::post('/forgot-password', [AuthController::class, 'forgotPassword']);

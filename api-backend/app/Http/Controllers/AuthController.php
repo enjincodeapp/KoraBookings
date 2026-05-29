@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Str;
 
 class AuthController extends Controller
 {
@@ -87,6 +89,72 @@ class AuthController extends Controller
                 'id' => $user->id,
                 'name' => $user->name,
                 'email' => $user->email,
+            ]
+        ]);
+    }
+
+    public function googleLogin(Request $request)
+    {
+        $validated = $request->validate([
+            'id_token' => 'required|string',
+        ]);
+
+        $response = Http::get('https://oauth2.googleapis.com/tokeninfo', [
+            'id_token' => $validated['id_token'],
+        ]);
+
+        if (!$response->successful()) {
+            return response()->json(['message' => 'Invalid Google token'], 401);
+        }
+
+        $payload = $response->json();
+
+        $acceptedClientIds = array_filter([
+            config('services.google.web_client_id'),
+            config('services.google.ios_client_id'),
+            config('services.google.android_client_id'),
+            config('services.google.expo_client_id'),
+        ]);
+        if (!empty($acceptedClientIds) && !in_array($payload['aud'] ?? null, $acceptedClientIds, true)) {
+            return response()->json(['message' => 'Google token was issued for a different app'], 401);
+        }
+
+        if (($payload['email_verified'] ?? 'false') !== 'true' || empty($payload['email'])) {
+            return response()->json(['message' => 'Google account email is not verified'], 401);
+        }
+
+        $user = User::where('google_id', $payload['sub'])
+            ->orWhere('email', $payload['email'])
+            ->first();
+
+        if ($user) {
+            $user->forceFill([
+                'google_id' => $payload['sub'],
+                'avatar' => $payload['picture'] ?? $user->avatar,
+                'email_verified_at' => $user->email_verified_at ?? now(),
+            ])->save();
+        } else {
+            $user = User::create([
+                'name' => $payload['name'] ?? $payload['email'],
+                'email' => $payload['email'],
+                'google_id' => $payload['sub'],
+                'avatar' => $payload['picture'] ?? null,
+                'password' => Hash::make(Str::random(32)),
+                'email_verified_at' => now(),
+            ]);
+        }
+
+        $token = $user->createToken('auth_token')->plainTextToken;
+
+        return response()->json([
+            'message' => 'Login successful',
+            'access_token' => $token,
+            'token_type' => 'Bearer',
+            'user' => [
+                'id' => $user->id,
+                'name' => $user->name,
+                'email' => $user->email,
+                'avatar' => $user->avatar,
             ]
         ]);
     }

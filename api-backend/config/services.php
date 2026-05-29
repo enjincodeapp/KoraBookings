@@ -49,4 +49,21 @@ return [
         'base_url' => env('PAYSTACK_BASE_URL', 'https://api.paystack.co'),
     ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | Google OAuth Configuration
+    |--------------------------------------------------------------------------
+    |
+    | The per-platform OAuth client IDs. These are served to the mobile app
+    | via GET /api/config and are also the accepted audiences when verifying
+    | the Google ID token in AuthController::googleLogin.
+    |
+    */
+    'google' => [
+        'web_client_id' => env('GOOGLE_WEB_CLIENT_ID'),
+        'ios_client_id' => env('GOOGLE_IOS_CLIENT_ID'),
+        'android_client_id' => env('GOOGLE_ANDROID_CLIENT_ID'),
+        'expo_client_id' => env('GOOGLE_EXPO_CLIENT_ID'),
+    ],
+
 ];
